@@ -1,19 +1,21 @@
 const express = require("express");
-const connectToMongoDB = require("./src/config/db");
-const dotenv = require("dotenv");
-dotenv.config();
+const cors = require("cors");
+const { join } = require("path");
+const router = require("./src/routes/user.routes");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI;
 
-// DB connection
-connectToMongoDB(MONGODB_URI);
+// Middleware
+app.use(express.static(join(__dirname, "./public")));
+app.use(cors());
+app.use(express.json());
+app.use("/api", router);
 
+// app.get("/", (req, res) => {
+//   res.send("HAPPY BIRTHDAY");
+// });
 app.get("/", (req, res) => {
-  res.send("HAPPY BIRTHDAY");
+  res.sendFile(join(__dirname, "./public/index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is listening at PORT ${PORT}`);
-});
+module.exports = app;

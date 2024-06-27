@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #eeeeee;
+  color: #242426;
+}
+
+.main__container {
+  padding: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto auto;
+  max-width: 400px;
+  gap: 0.4rem;
+  height: -100px;
+  /* overflow: auto; */
+}
+
+input {
+  border: 1px solid #b8edfa;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  outline: 1px solid #b89;
+  margin-bottom: 0.4rem;
+}
+
+button {
+  border: none;
+  /* outline: 1px solid #b89; */
+  background-color: #222831;
+
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+#submitButton {
+  color: white; /* Change text color to black */
+}
+
+button:hover {
+  outline-color: #242426;
+  background-color: #007bff;
+  color: aliceblue;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  padding: 0.8rem 0;
+}
+
+@media screen and (max-width: 480px) {
+  .main__container {
+    padding: 2rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* TOAST */
+
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  height: 2.5rem;
+  background-color: greenyellow;
+  border-radius: 0 0 0.4rem;
+  position: fixed;
+  z-index: 10;
+  right: 1rem;
+  top: 2.5rem;
+  font-weight: 600;
+}
+
+.toast p {
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+/* .toast  */
+.slider {
+  width: 100%;
+  display: block;
+  height: 0.25rem;
+  background-color: green;
+  animation: slide 2.5s linear;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 2.5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 2.5rem;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes slide {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}

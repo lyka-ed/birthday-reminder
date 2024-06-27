@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Reminder App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Main content container -->
+    <div class="main__container">
+      <div>
+        <h1 class="header__text">Lyka</h1>
+        <p class="subtitle__text">birthday Reminder App</p>
+      </div>
+      <form id="birthdayForm">
+
+        <b><label for="email">Full Name</label></b>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Enter Name"
+          required
+        />
+
+        <label for="birthdate">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Email"
+          required
+        />
+
+        <label for="birthdate">Birthdate</label>
+        <input
+          type="date"
+          name="birthdate"
+          id="birthdate"
+          required
+          style="max-width: 150px"
+        />
+        <div></div>
+        <button id="submitButton" type="submit">Add User</button>
+      </form>
+    </div>
+
+    <!-- Toast container -->
+    <div class="toast" id="toast">
+      <div class="slider"></div>
+      <p id="message">Sample text</p>
+    </div>
+
+    <footer>
+      <i><p>&#169 2024 <a href="#">Lykan's</a></p></i>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
