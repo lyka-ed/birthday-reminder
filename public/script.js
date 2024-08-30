@@ -26,13 +26,11 @@ document
         showToast("User added successfully");
         document.getElementById("birthdayForm").reset();
       } else {
-        // alert('Failed to add user');
-        showToast("Failed to Add user");
+        showToast("Failed to add user");
       }
     } catch (error) {
-      console.error(error);
-      //   alert('Failed to add user');
-      showToast("Failed to Add user");
+      console.error(error); .
+      showToast("Failed to Add-user");
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = "Add User";
