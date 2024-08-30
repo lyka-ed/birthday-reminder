@@ -18,9 +18,9 @@ const checkBirthdays = async () => {
       const birthMonth = user.birthdate.getMonth() + 1;
 
       // Check if user's birthday is today
-      // if (birthDay === currentDay && birthMonth === currentMonth) {
-      await sendEmail(user.email, user.username);
-      // }
+      if (birthDay === currentDay && birthMonth === currentMonth) {
+        await sendEmail(user.email, user.username);
+      }
     });
   } catch (error) {
     console.error("Error checking for birthday", error);
