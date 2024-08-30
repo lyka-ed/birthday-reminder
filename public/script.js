@@ -29,7 +29,7 @@ document
         showToast("Failed to add user");
       }
     } catch (error) {
-      console.error(error); .
+      console.error(error);
       showToast("Failed to Add-user");
     } finally {
       submitButton.disabled = false;
