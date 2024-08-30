@@ -13,25 +13,26 @@ document
 
     try {
       console.log(username, email, birthdate);
-      const response = await fetch("/api/users", {
+      const response = await fetch("/api/addUser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ username, email, birthdate }),
       });
+      console.log(response);
       if (response.ok) {
         // alert('User added successfully');
         showToast("User added successfully");
         document.getElementById("birthdayForm").reset();
       } else {
         // alert('Failed to add user');
-        showToast("Failed to add user");
+        showToast("Failed to Add user");
       }
     } catch (error) {
       console.error(error);
       //   alert('Failed to add user');
-      showToast("Failed to add user");
+      showToast("Failed to Add user");
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = "Add User";

@@ -17,7 +17,7 @@ const addUser = async ({ username, email, birthdate }) => {
     const user = await User.create({ username, email, birthdate });
     return user;
   } catch (error) {
-    throw new Error(`Failed to add user: ${error.message}`);
+    throw new Error(`Failed to Add user: ${error.message}`);
   }
 };
 
