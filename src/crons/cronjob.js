@@ -6,7 +6,7 @@ const userService = require("../services/user.service");
 const checkBirthdays = async () => {
   console.log("Checking birthdays......");
   const today = new Date();
-  const currentDay = today.getDay();
+  const currentDay = today.getDate();
   const currentMonth = today.getMonth() + 1;
 
   try {
@@ -14,7 +14,7 @@ const checkBirthdays = async () => {
     // console.log('Cron job started', users);
     users.forEach(async (user) => {
       // Cron job started
-      const birthDay = user.birthdate.getDay();
+      const birthDay = user.birthdate.getDate();
       const birthMonth = user.birthdate.getMonth() + 1;
 
       // Check if user's birthday is today
@@ -31,7 +31,7 @@ const checkBirthdays = async () => {
 
 // Cronjob will start at 7am daily to check for user an send email on the date of their birthday.
 const startCronJob = () => {
-  cron.schedule("* * * * *", checkBirthdays, {
+  cron.schedule("0 7 * * *", checkBirthdays, {
     timezone: "Africa/Lagos",
   });
   console.log("Birthday reminder cronjob  is active");
