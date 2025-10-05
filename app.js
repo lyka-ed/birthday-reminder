@@ -8,6 +8,7 @@ const app = express();
 // Middleware
 app.use(express.static(join(__dirname, "./public")));
 app.use(cors());
+
 app.use(express.json());
 app.use("/api", router);
 
